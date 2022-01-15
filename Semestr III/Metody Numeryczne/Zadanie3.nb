@@ -1,0 +1,232 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7948,        224]
+NotebookOptionsPosition[      7149,        202]
+NotebookOutlinePosition[      7551,        218]
+CellTagsIndexPosition[      7508,        215]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"bisekcja", "[", 
+     RowBox[{"f_", ",", " ", "a_", ",", "b_", ",", " ", "\[CurlyEpsilon]_"}], 
+     "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", " ", 
+       RowBox[{
+        RowBox[{"ile", "=", "1"}], ",", " ", 
+        RowBox[{"xk", "=", "a"}], ",", " ", 
+        RowBox[{"yk", "=", "b"}], ",", " ", "Zk"}], "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Zk", "=", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"xk", "+", "yk"}], ")"}], "/", "2"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"While", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Abs", "[", 
+           RowBox[{"f", "[", "Zk", "]"}], "]"}], ">=", " ", 
+          "\[CurlyEpsilon]"}], ",", " ", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"f", "[", "xk", "]"}], "*", 
+              RowBox[{"f", "[", "Zk", "]"}]}], ">", "0"}], ",", " ", 
+            RowBox[{"xk", "=", "Zk"}], ",", " ", 
+            RowBox[{"yk", "=", "Zk"}]}], "]"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"Zk", "=", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"xk", "+", "yk"}], ")"}], "/", "2"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"ile", "++"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+       " ", "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<Pierwiastkami r\[OAcute]wnania \\n\>\"", ",", " ", 
+         RowBox[{"f", "[", "x", "]"}], ",", "\"\<=0\\njest liczba \>\"", ",", 
+         "Zk", ",", "\"\< znaleziona za \>\"", ",", " ", "ile", ",", " ", 
+         "\"\< razem\>\""}], "]"}], ";"}]}], "\[IndentingNewLine]", "]"}]}], 
+   ";"}], "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQAWIQfWf51cR5K944nnN6kgWiuX7PKwHRpfzLp4LoQObV
+60H0BInXe0G0wE73syA6Tu7NRRC9/OPkGyC6IOPmTRBtZbH0IYguac5/CaJf
+nVn/HUR7vL/9E0QvUXzxD0T7aM/jmA+kpSp384JoFd7/CiBaJ3WhKoj++0dU
+B0Rv9Lf0BNHPVoeDaYVPcb4gOnLBNTBtEucSCqL/Ob6IANF6PbMKQTTb631l
+IFpgRk0tiOZ2qusF0crF5yaC6JAVhZNB9Juaj9NBtAN/zxIQfeOwzFoQ3ezn
+DKattjXeANHzJDvA9JYDPY9A9N7d68A0ANtquAA=
+  "],ExpressionUUID->"79e94b99-bd25-4810-9a73-7cf240b89e45"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "x_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"x", "+", 
+      RowBox[{"Cos", "[", "x", "]"}]}], ")"}], 
+    RowBox[{"E", "^", 
+     RowBox[{"(", 
+      RowBox[{"-", 
+       RowBox[{"Sin", "[", 
+        RowBox[{"x", "-", 
+         RowBox[{"ArcTan", "[", 
+          RowBox[{"1", "-", 
+           RowBox[{"x", "*", "x"}]}], "]"}]}], "]"}]}], ")"}]}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"bisekcja", "[", 
+   RowBox[{"f", ",", 
+    RowBox[{"-", "2."}], ",", "1.", ",", ".001"}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.84650386917595*^9, 3.8465038696085477`*^9}, {
+  3.8465039064035835`*^9, 3.8465039720173674`*^9}, {3.8465041123007383`*^9, 
+  3.8465041139059877`*^9}},
+ CellLabel->"In[31]:=",ExpressionUUID->"78e621da-29ec-4275-b617-0ef305f2798f"],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   RowBox[{"\<\"Pierwiastkami r\[OAcute]wnania \\n\"\>", "\[InvisibleSpace]", 
+    RowBox[{
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"-", 
+       RowBox[{"Sin", "[", 
+        RowBox[{"x", "-", 
+         RowBox[{"ArcTan", "[", 
+          RowBox[{"1", "-", 
+           SuperscriptBox["x", "2"]}], "]"}]}], "]"}]}]], " ", 
+     RowBox[{"(", 
+      RowBox[{"x", "+", 
+       RowBox[{"Cos", "[", "x", "]"}]}], ")"}]}], 
+    "\[InvisibleSpace]", "\<\"=0\\njest liczba \"\>", "\[InvisibleSpace]", 
+    RowBox[{"-", "0.7391357421875`"}], 
+    "\[InvisibleSpace]", "\<\" znaleziona za \"\>", "\[InvisibleSpace]", "13",
+     "\[InvisibleSpace]", "\<\" razem\"\>"}],
+   SequenceForm[
+   "Pierwiastkami r\[OAcute]wnania \n", 
+    E^(-Sin[$CellContext`x - ArcTan[1 - $CellContext`x^2]]) ($CellContext`x + 
+     Cos[$CellContext`x]), "=0\njest liczba ", -0.7391357421875, 
+    " znaleziona za ", 13, " razem"],
+   Editable->False], "\[IndentingNewLine]", "\[IndentingNewLine]"}]], "Print",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{
+  3.846503973188051*^9, {3.846504119254237*^9, 3.846504161814096*^9}, {
+   3.846504266004384*^9, 
+   3.8465042663847475`*^9}},ExpressionUUID->"53f81caf-d31d-4aaa-b88d-\
+5ee07d8959d8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"g", "[", "x_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"2", "x"}], "-", 
+    RowBox[{
+     RowBox[{"Log", "[", 
+      RowBox[{
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         RowBox[{"2", "x"}], "-", "3"}], "]"}], "+", 
+       RowBox[{"3", 
+        RowBox[{"E", "^", "x"}]}]}], "]"}], "*", 
+     RowBox[{"ArcTan", "[", 
+      RowBox[{
+       RowBox[{"2", "x"}], "+", 
+       RowBox[{"Cos", "[", 
+        RowBox[{"3", "x"}], "]"}]}], "]"}]}], "-", "1"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"bisekcja", "[", 
+   RowBox[{"g", ",", "2.", ",", "6.", ",", ".001"}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.8465042788815117`*^9, 3.846504375126859*^9}},
+ CellLabel->"In[34]:=",ExpressionUUID->"c034cdf7-a18d-4586-a8e7-727e2c225cfa"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Pierwiastkami r\[OAcute]wnania \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", "1"}], "+", 
+    RowBox[{"2", " ", "x"}], "-", 
+    RowBox[{
+     RowBox[{"ArcTan", "[", 
+      RowBox[{
+       RowBox[{"2", " ", "x"}], "+", 
+       RowBox[{"Cos", "[", 
+        RowBox[{"3", " ", "x"}], "]"}]}], "]"}], " ", 
+     RowBox[{"Log", "[", 
+      RowBox[{
+       RowBox[{"3", " ", 
+        SuperscriptBox["\[ExponentialE]", "x"]}], "-", 
+       RowBox[{"Sin", "[", 
+        RowBox[{"3", "-", 
+         RowBox[{"2", " ", "x"}]}], "]"}]}], "]"}]}]}], 
+   "\[InvisibleSpace]", "\<\"=0\\njest liczba \"\>", "\[InvisibleSpace]", 
+   "4.86328125`", "\[InvisibleSpace]", "\<\" znaleziona za \"\>", 
+   "\[InvisibleSpace]", "10", "\[InvisibleSpace]", "\<\" razem\"\>"}],
+  SequenceForm[
+  "Pierwiastkami r\[OAcute]wnania \n", -1 + 2 $CellContext`x - 
+   ArcTan[2 $CellContext`x + Cos[3 $CellContext`x]] 
+   Log[3 E^$CellContext`x - Sin[3 - 2 $CellContext`x]], "=0\njest liczba ", 
+   4.86328125, " znaleziona za ", 10, " razem"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8465043784755955`*^9},
+ CellLabel->
+  "During evaluation of \
+In[34]:=",ExpressionUUID->"b27b86dc-18b5-4e9a-b2f5-ba25819e8d10"]
+}, Open  ]]
+},
+WindowSize->{1080, 652},
+WindowMargins->{{-5.5, Automatic}, {Automatic, -5.5}},
+FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (July 9, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"f415024a-64a3-4596-8152-7957a36e667b"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2316, 56, 265, "Input",ExpressionUUID->"79e94b99-bd25-4810-9a73-7cf240b89e45"],
+Cell[CellGroupData[{
+Cell[2899, 80, 848, 24, 64, "Input",ExpressionUUID->"78e621da-29ec-4275-b617-0ef305f2798f"],
+Cell[3750, 106, 1287, 31, 100, "Print",ExpressionUUID->"53f81caf-d31d-4aaa-b88d-5ee07d8959d8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5074, 142, 804, 24, 64, "Input",ExpressionUUID->"c034cdf7-a18d-4586-a8e7-727e2c225cfa"],
+Cell[5881, 168, 1252, 31, 60, "Print",ExpressionUUID->"b27b86dc-18b5-4e9a-b2f5-ba25819e8d10"]
+}, Open  ]]
+}
+]
+*)
+
