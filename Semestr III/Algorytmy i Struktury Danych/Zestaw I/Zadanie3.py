@@ -3,9 +3,7 @@ class Node:
 		self.value = value
 		self.next = None
 
-
 class Stack:
-
 
 	def __init__(self):
 		self.head = Node("head")

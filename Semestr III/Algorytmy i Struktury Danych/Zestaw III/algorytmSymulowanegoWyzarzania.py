@@ -3,10 +3,8 @@ from numpy.random import rand, seed, randn
 from numpy.random.mtrand import uniform
 import math
 
-
 def objective(point1, point2):
     return -math.cos(point1)*math.cos(point2)*math.exp(-(point1-math.pi)**2-(point2-math.pi)**2)
-
 
 def SA(objective, area, iterations, temperature):
     startPoint1 = uniform(-100, 100)
@@ -23,7 +21,6 @@ def SA(objective, area, iterations, temperature):
                 startPoint1 = startPoint1-tmp
                 startPoint2 = startPoint2-tmp
     return startPoint1, startPoint2
-
 
 area = asarray([[10, -10]])
 temperature = 12
